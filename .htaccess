@@ -1,0 +1,17 @@
+RewriteEngine On
+RewriteBase /UDrive/
+
+# Route API requests
+RewriteRule ^api/(.*)$ api/index.php [QSA,L]
+
+# Serve existing static files (in root or public/)
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Route css/js/etc to index.php which serves from public/
+RewriteCond %{REQUEST_URI} \.(css|js|ico|png|jpg|gif|svg|woff2?|ttf|eot|map)$ [NC]
+RewriteRule ^ index.php [L,QSA]
+
+# SPA fallback
+RewriteRule ^ index.php [L]

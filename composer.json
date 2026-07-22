@@ -1,0 +1,20 @@
+{
+    "name": "udrive/cloud-storage",
+    "description": "UDrive - All-in-one cloud storage aggregator",
+    "type": "project",
+    "require": {
+        "php": ">=8.0",
+        "ext-pdo": "*",
+        "ext-openssl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-curl": "*",
+        "google/apiclient": "^2.15",
+        "google/auth": "^1.33"
+    },
+    "autoload": {
+        "psr-4": {
+            "UDrive\\": "src/"
+        }
+    }
+}
